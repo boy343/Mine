@@ -1,3 +1,31 @@
-readme 第一行
-二
+# ReadME
 
+
+
+##============
+工作区：就是你在电脑里能看到的目录。
+暂存区：一般存放在 .git 目录下的 index 文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+版本库：工作区有一个隐藏目录 .git，这个不算工作区，而是 Git 的版本库。
+git commit   --amend        撤销上一次提交  并讲暂存区文件重新提交
+git checkout -- <file>     拉取暂存区文件 并将其替换成工作区文件
+git reset HEAD  -- <file>  拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区
+
+##推送
+git log
+git branch -a
+git add .
+git commit -m 'update'
+git push origin master:master -- 远程主分支
+输入账号密码GuoNing-cmd/pwd  OK
+git push origin master:uat   -- 远程已经存在的分支
+git push origin master:uat20210730 --远程没有的分支
+
+
+##合并：
+git pull 命令用于从远程获取代码并合并本地的版本。
+git pull <远程主机名> <远程分支名>:<本地分支名>
+eg:
+将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并。
+git pull origin master:brantest
+如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
+git pull origin master
