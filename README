@@ -29,3 +29,40 @@ eg:
 git pull origin master:brantest
 如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
 git pull origin master
+
+
+##更换仓库名：
+1.先删除旧仓库连接，git remote rm 【旧仓库名的连接】
+2.然后查看一下连接到的远程仓库 git remote -v
+3.再添加新仓库连接，git remote add origin 【新仓库名的连接】
+4.然后查看一下连接到的远程仓库名是否变更 git remote -v
+5.同时观察到 .idea/config内部的url变更
+
+
+
+Louis@LAPTOP-KIEJBC9L MINGW64 /d/work/code/新建文件夹 (master)
+$ git remote -v
+
+Louis@LAPTOP-KIEJBC9L MINGW64 /d/work/code/新建文件夹 (master)
+$ git remote add https://github.com/GuoNing-cmd/Mine.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+Louis@LAPTOP-KIEJBC9L MINGW64 /d/work/code/新建文件夹 (master)
+$ git remote add origin https://github.com/GuoNing-cmd/Mine.git
+
+Louis@LAPTOP-KIEJBC9L MINGW64 /d/work/code/新建文件夹 (master)
+$ git remote -v
+origin  https://github.com/GuoNing-cmd/Mine.git (fetch)
+origin  https://github.com/GuoNing-cmd/Mine.git (push)
+
+Louis@LAPTOP-KIEJBC9L MINGW64 /d/work/code/新建文件夹 (master)
